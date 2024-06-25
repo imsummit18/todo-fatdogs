@@ -1,4 +1,5 @@
 import { Header } from '@/modules/layout/Dashboard/layout.header';
+import Sidebar from '@/modules/layout/Dashboard/sidebar.layout';
 import { Metadata } from 'next';
 import React from 'react'
 
@@ -10,12 +11,10 @@ export const metadata: Metadata = {
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className='flex'>
-            <div className='bg-primary-300 h-screen w-[250px]'>
-                asd
-            </div>
-            <div className='flex flex-col w-full'>
-                    <Header />
+        <div className='flex  h-screen  overflow-visible relative'>
+            <Sidebar />
+            <div className='w-full overflow-visible flex flex-col w-full ml-[178px] '>
+                <Header />
                 <div className='p-6'>
                     {children}
                 </div>

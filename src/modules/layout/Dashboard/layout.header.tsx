@@ -9,7 +9,7 @@ export function Header() {
     const router = useRouter();
 
     return (
-        <div className=" supports-backdrop-blur:bg-background/60 border-b bg-background/95 backdrop-blur z-10 pr-3 h-[60px] shadow flex items-center justify-end">
+        <div className=" supports-backdrop-blur:bg-background/60 border-b bg-background/95 backdrop-blur z-10 pr-6 h-[57px]  shadow flex items-center justify-end">
             <div className="flex items-center justify-end gap-2 ">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -29,9 +29,6 @@ export function Header() {
                     <DropdownMenuContent className="w-56" align="end" forceMount>
                         <DropdownMenuLabel className="font-normal">
                             <div className="flex flex-col space-y-1">
-                                <p className="text-sm font-medium leading-none">
-                                    Sumit Ghimire
-                                </p>
                                 <p className="text-xs leading-none text-muted-foreground">
                                     sumighimire018@gmail.com
                                 </p>
