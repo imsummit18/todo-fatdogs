@@ -6,7 +6,6 @@ export const handleResponse = async (
     message?: string,
     toast?: TSFixMe,
 ) => {
-    console.log("The response is", response, message, toast)
     if (response.success) {
         toast({
             variant: "success",

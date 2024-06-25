@@ -1,8 +1,13 @@
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Login",
+    description: "",
+};
 
-const AuthLayout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="relative flex-col items-center justify-center grid max-w-none lg:grid-cols-2 lg:px-0 overflow-none">
+        <div className="relative flex-col items-center justify-center grid max-w-none  h-screen m-auto lg:grid-cols-2 lg:px-0 overflow-none">
             <div className="lg:p-8 lg:pt-0  px-6 py-8 xl:p-0 max-w-[520px]   bg-white lg:bg-transparent mx-[4%] sm:m-auto rounded-lg   shadow-md lg:shadow-none flex flex-col justify-between ">
                 {children}
             </div>
@@ -12,4 +17,4 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
     );
 }
-export default AuthLayout;
+export default Layout;

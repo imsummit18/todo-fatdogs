@@ -46,7 +46,9 @@ const finalizedData = async (res: any) => {
 
 interface PostProps {
     url: string;
-    data: any;
+    data: {
+        [key: string]: any
+    };
 }
 
 export const Post = async (props: PostProps) => {
@@ -57,8 +59,8 @@ export const Post = async (props: PostProps) => {
             body: JSON.stringify(props.data)
         })
         return finalizedData(res);
+
     } catch (e) {
-        console.log('The error is', e)
         return {
             message: "Error",
             response: "Something went wrong",

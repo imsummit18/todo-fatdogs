@@ -7,7 +7,6 @@ export function middleware(request: NextRequest, response: NextResponse) {
     const nextResponse = NextResponse.next();
     const path = request.nextUrl.pathname;
     const accessToken = request?.cookies.get('token')?.value;
-    console.log("accessToken", accessToken)
     const url = request.nextUrl.clone();
 
 

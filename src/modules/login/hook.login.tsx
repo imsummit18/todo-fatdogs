@@ -21,8 +21,6 @@ const useLogin = ({ onSuccess }: LoginProps) => {
 
     const onSubmit = async (values: LoginSchemaType) => {
         const res = await login(values);
-        console.log("the res in login page is", res)
-        // onSuccess?.()
         if (res.success) {
             setCookie("token", res.response.access)
             onSuccess?.();

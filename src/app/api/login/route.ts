@@ -2,10 +2,9 @@ import { generateRandomString } from '@/lib/common.utilis';
 import { setCookie } from 'cookies-next';
 
 const users = [{ email: 'a@a.com', password: 'test1234' }];
-export async function POST(req: any, res: any) {
+export async function POST(req: Request) {
     const reqBody = await req.json();
     const { email, password } = reqBody;
-    console.log(" email", email, password)
     if (!email || !password) {
         return Response.json({
             message: 'Email and password are required'

@@ -28,9 +28,7 @@ const Login = () => {
                 title="Login"
                 description="Please enter your email address and password below to log in "
             />
-
             <div className='mt-8 md:mt-10'>
-
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} >
                         <FormFieldInput

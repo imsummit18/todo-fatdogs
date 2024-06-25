@@ -10,9 +10,7 @@ export const login = async (data: any) => {
     });
 }
 
-
 export const logout = async () => {
     const cookie = cookies();
     cookie.delete("token");
-    cookie.delete("refreshToken");
 }

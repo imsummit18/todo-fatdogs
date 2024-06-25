@@ -1,19 +1,27 @@
 "use client";
 import FormFieldInput from '@/components/common/formFieldInput'
 import { Button } from '@/components/ui/button'
-import React from 'react'
+import React, { useEffect } from 'react'
 import useAddTodo from './hook.todo'
 import { Form } from '@/components/ui/form';
+import { TodoState, todoStore } from './store.todo';
 
 const TodoForm = () => {
-    const { form, onSubmit } = useAddTodo()
+
+    const { editData } = todoStore((state: TodoState) => state);
+    const { form, handleSubmit } = useAddTodo()
+
+    useEffect(() => {
+        form.setValue("todo", editData?.todo)
+    }, [editData])
+
     return (
         <Form {...form}>
             <form
-                onSubmit={form.handleSubmit(onSubmit)}
+                onSubmit={handleSubmit}
                 className=" space-y-8"
             >
-                <div className="grid gap-6 rounded-lg border p-4 w-[500px] shadow-md mx-auto mt-[20]">
+                <div className="grid gap-6 rounded-lg border p-4 w-full xl:w-[500px] shadow-md mx-auto mt-[20]">
                     <FormFieldInput
                         name={"todo"}
                         type={"text"}
@@ -24,11 +32,10 @@ const TodoForm = () => {
                         touched={form.formState.touchedFields}
                     />
                     <Button
-                        isSubmitting={form.formState.isSubmitting}
                         type='submit'
                         size='default'
                         className='w-fit flex justify-end'
-                        text="Add Todo"
+                        text={editData ? "Update Todo" : "Add Todo"}
                     />
                 </div>
             </form>

@@ -4,12 +4,16 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { logout } from "@/modules/login/action.auth";
 import { useRouter } from "next/navigation";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 export function Header() {
     const router = useRouter();
 
     return (
-        <div className=" supports-backdrop-blur:bg-background/60 border-b bg-background/95 backdrop-blur z-10 pr-6 h-[57px]  shadow flex items-center justify-end">
+        <div className=" supports-backdrop-blur:bg-background/60 border-b bg-background/95 backdrop-blur z-10 pr-6 h-[57px]  shadow flex items-center justify-between xl:justify-end w-full">
+            <div className="ml-4 xl:hidden">
+                <RxHamburgerMenu size={28} />
+            </div>
             <div className="flex items-center justify-end gap-2 ">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -23,7 +27,7 @@ export function Header() {
                                     />
                                 </Avatar>
                             </Button>
-                            <p className="text-base font-medium text-black"> Sumit Ghimire</p>
+                            <p className="text-sm xl:text-base font-medium text-black"> Sumit Ghimire</p>
                         </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-56" align="end" forceMount>
