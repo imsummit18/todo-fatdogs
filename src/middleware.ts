@@ -9,7 +9,6 @@ export function middleware(request: NextRequest, response: NextResponse) {
     const accessToken = request?.cookies.get('token')?.value;
     const url = request.nextUrl.clone();
 
-
     if ((path === '/' && (!accessToken || accessToken === undefined)) || (isProtectedRoute(path) && (!accessToken || accessToken === undefined))
     ) {
         url.pathname = "/login";
