@@ -1,4 +1,5 @@
 "use client";
+import { Delete, Edit } from '@/assets/icons';
 import BreadCumb from '@/components/common/breadcumb'
 import { DataTable } from '@/components/common/data-table';
 import TodoForm from '@/modules/dashboard/form.todo'
@@ -51,7 +52,7 @@ const Dashboard = () => {
 
                 <div className='flex item-center justify-center mt-4 '>
                     <TodoForm />
-                    <div className='w-full shadow ml-10 p-4'>
+                    <div className='w-full shadow ml-10 p-4 border border-gray-200'>
                         <p className='font-semibold text-xl'>Todo List</p>
                         <div className='mt-3'>
                             <DataTable
@@ -72,11 +73,13 @@ const Dashboard = () => {
                                         cell: (row: any) => {
                                             console.log("The row is", row)
                                             return (
-                                                <div className='flex justify-center'>
-                                                    <p className='text-primary-300 cursor-pointer'>Edit</p>
-                                                    <p className='text-red-500 cursor-pointer ml-3'
+                                                <div className='flex '>
+                                                    <p className='text-primary-300 cursor-pointer  border p-[1px] border-primary-300 rounded'>
+                                                        <Edit size={22} />
+                                                    </p>
+                                                    <p className='text-red-500 cursor-pointer ml-3 border p-[1px] border-[red] rounded'
                                                         onClick={() => deleteTodo(row?.row?.original?.id)}
-                                                    >Delete</p>
+                                                    ><Delete size={22} /></p>
                                                 </div>
                                             )
                                         }
